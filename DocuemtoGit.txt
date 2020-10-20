@@ -1,0 +1,3 @@
+# Este será nuestro primer documento de git
+
+## Donde prodremos espesificar los detalles que vamos a incluir
