@@ -3,3 +3,5 @@
 ## Donde prodremos espesificar los detalles que vamos a incluir
 
 Ejericio de prueba cambios
+
+acabamos de integrar modificaciones con visual code
