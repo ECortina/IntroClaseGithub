@@ -5,3 +5,8 @@
 Ejericio de prueba cambios
 
 acabamos de integrar modificaciones con visual code
+
+--- a partir de aca empiza la rama y modificaciones de la estructura ----
+
+
+nuevos ejercicios de prueba
