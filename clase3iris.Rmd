@@ -1,0 +1,131 @@
+---
+title: "Clase3 Iris"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### librerias 
+
+```{r}
+
+library(tidyverse)
+
+
+```
+
+### Data Set Iris
+
+```{r}
+
+
+
+## llamamos el dataset 
+iris 
+iris[1,]
+iris[,1]
+iris[1,2]
+
+
+
+
+## pipe nos permite optimizar la forma en que escribimos
+
+#%>%
+
+### Eplorar la informacion 
+  
+glimpse(iris)
+
+iris%>%
+  glimpse()
+
+?glimpse
+
+head(iris)
+tail(iris)
+
+summary(iris)
+
+?summary
+
+
+## llamar por nombre $
+iris$Sepal.Length
+iris$Sepal.Length>6
+iris[iris$Sepal.Length>6,]
+
+##para ver los nombre
+names(iris)
+
+##estructura
+
+str(iris)
+
+
+```
+
+### Gráficas
+
+```{r}
+
+iris%>%
+  ggplot(aes(Sepal.Length, fill= Species))+
+  geom_histogram()+
+  facet_wrap(~Species, scales = "free")
+  labs(title = "Datos largo del Sépalo")
+
+  names(iris)
+  
+  
+```
+
+### Realicemos un resumen estadístico de Iris
+### EDA = Exploratory data analysis
+
+
+```{r}
+
+iris %>%
+  group_by(Species)%>%
+  summarize(Promedio=mean(Sepal.Length),
+            Mediana=median(Sepal.Length),
+            p25=quantile(Sepal.Length)[2],
+            p75=quantile(Sepal.Length)[4])%>%
+  ggplot(aes(Mediana,Species,color=Species))+
+  geom_point(show.legend = FALSE,aes(size=Mediana))+
+  geom_errorbar(aes(xmin=p25,xmax=p75),show.legend = FALSE, linetype = "dashed")+
+  labs(title = "Distribucion de las especies segun el cuantil")
+            
+  
+
+```
+
+### Iris segun boxplot 
+
+```{r}
+boxplot(iris)
+abline(h = mean(iris$Petal.Length,col="red"))
+
+
+```
+
+### Instalar y cargar skim 
+#### Skim sirve para hacer analisis estadístico. Es como una versión completa de Summary()
+
+```{r}
+
+library(skimr)
+
+```
+
+```{r}
+
+iris%>%
+  dplyr::group_by(Species)%>%
+  skim()
+
+
+```
