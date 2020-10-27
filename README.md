@@ -3,4 +3,4 @@
 ### Nuestro primer repositorio compartido con los estudiantes
 #### Aca inicia el documento
 
-* esto tener las funciones de un manual
+* Aca incluimos códigos de análisis exploratorio de datos de Iris
